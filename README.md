@@ -1,10 +1,10 @@
 # nuxt-editorjs
 
-This Nuxt3 module wraps `@editorjs/editorjs` and provides a single component (`<editor-js />`) for block styled text editing in Nuxt3.
+Nuxt3 components for `@editorjs/editorjs`.
 
 ## Installation
 
-- Run `yarn install nuxt-editorjs` to install from NPM.
+- Run `yarn add nuxt-editorjs` to install from NPM.
 - Add the module to your `nuxt.config.ts` file and optimise with vite:
 
 ```javascript
