@@ -1,7 +1,6 @@
 
 # nuxt-editorjs
 [![Npm package version](https://badgen.net/npm/v/nuxt-editorjs)](https://npmjs.com/package/nuxt-editorjs)
-[![Npm package total downloads](https://badgen.net/npm/dt/nuxt-editorjs)](https://npmjs.com/package/nuxt-editorjs)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 Nuxt3 components for `@editorjs/editorjs`.
