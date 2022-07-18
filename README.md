@@ -30,3 +30,10 @@ export default defineNuxtConfig({
 - Run `yarn dev:prepare` to generate type stubs.
 - Use `yarn dev` to start [playground](./playground) in development mode.
 - Use `yarn prepack` to build the module.
+
+## Todo
+
+- Add more Editor.js modules (Header, List, ...)
+- Add preview component (using EditorJS -> HTML package)
+- Add custom styling (override standard CSS)
+- Why is <client only> needed?</client>

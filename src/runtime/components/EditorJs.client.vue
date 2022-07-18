@@ -1,5 +1,8 @@
 <template>
-  <div id="editor"></div>
+  <div class="editor-js-container">
+    <div id="editor"></div>
+    <editor-js-saved v-if="just_saved" />
+  </div>
 </template>
 
 <script setup>
@@ -7,39 +10,42 @@ import EditorJS from "@editorjs/editorjs";
 import { ref, onMounted } from "vue";
 
 const props = defineProps({
-  data: {
-    default: [],
-  },
-  onChangeTimeout: {
-    default: 0,
+  modelValue: {
+    default: {},
   },
 });
 
-const emit = defineEmits(["onChange"]);
-const data = ref(props.data);
-const change_ready = ref(true);
-const onChange = (api, event) => {
-  api.saver.save().then(async (data) => {
-    data.value = data;
-    if (change_ready.value) {
-      emit("onChange", { data });
-      if (props.onChangeTimeout > 0) {
-        change_ready.value = false;
-        setTimeout(() => {
-          change_ready.value = true;
-        }, props.onChangeTimeout);
-      }
-    }
-  });
+const value = ref(props.modelValue);
+const just_saved = ref(false);
+const save = () => {
+  just_saved.value = true;
+  setTimeout(() => {
+    just_saved.value = false;
+  }, 2000);
 };
+defineExpose({
+  save,
+});
 
-onMounted(() => {
-  const editor = new EditorJS({
-    holder: "editor",
-    minHeight: 0,
-    onChange: onChange,
-    data: props.data,
-    logLevel: "ERROR",
-  });
+const emit = defineEmits(["update:modelValue"]);
+const change_ready = ref(true);
+
+const editor = new EditorJS({
+  holder: "editor",
+  minHeight: 0,
+  onChange: (api, event) => {
+    api.saver.save().then(async (data) => {
+      emit("update:modelValue", data);
+      // value.value = data;
+    });
+  },
+  data: props.modelValue,
+  logLevel: "ERROR",
 });
 </script>
+
+<style scoped>
+.editor-js-container {
+  position: relative;
+}
+</style>
