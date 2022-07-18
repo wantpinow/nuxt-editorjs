@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1>Welcome to nuxt-editor-js!</h1>
-    <!-- <foo ref="foo" /> -->
+    <client-only><editor-js v-model="dat" /></client-only>
     <button @click="save">SAVE</button>
+    {{ dat }}
   </div>
 </template>
 
@@ -25,8 +26,6 @@ const default_data = {
   ],
   version: "2.25.0",
 };
-const foo = ref();
-const editor = ref();
 const dat = ref(default_data);
 const save = () => {
   console.log(foo);

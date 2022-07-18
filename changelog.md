@@ -3,7 +3,8 @@
 - Added `v-model` to the `<editor-js />` component.
 - Added headers, lists, code blocks, quotes, tables. [TODO]
 - Updated the example playground. [TODO]
-- Created a changelog 😊.
+- Add 'saved' button [TODO]
+- Created a changelog.
 
 # 1.0.1
 
