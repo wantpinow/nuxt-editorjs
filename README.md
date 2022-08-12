@@ -1,5 +1,5 @@
-
 # nuxt-editorjs
+
 [![Npm package version](https://badgen.net/npm/v/nuxt-editorjs)](https://npmjs.com/package/nuxt-editorjs)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
@@ -37,6 +37,7 @@ export default defineNuxtConfig({
 ## Todo
 
 - Add more Editor.js modules (Header, List, ...)
+- Add the ability to use custom Editor.js modules
 - Add preview component (using EditorJS -> HTML package)
 - Add custom styling (override standard CSS)
-- Why is <client only> needed?</client>
+- Why is `<client-only>` needed?`</client>` to render a v-model?
